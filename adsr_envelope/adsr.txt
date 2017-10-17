@@ -1,0 +1,21 @@
+Discrete ADSR
+
+First ADSR Schematic
+
+First ADSR Schematic
+
+The original circuit was found in the Music Machines diy-archives. Its a design by Barry Klein. I started to expand it from the Original AD-envelope to an ADSR envelope. Make sure you add a 2.2kOhms resistor in series with the Attack and Decay pots, this prevents clicking and an unwanted latchup condition for the flip-flop. It needs a beefy signal for the gate, about 10 Volt or more.
+
+Second ADSR Schematic	
+
+Second ADSR Schematic
+
+The second image shows a much simpler ADSR which uses a (7)555 timer IC to do nearly all what is needed. It is preceeded by a transistor circuit which buffers the input and generates a short pulse which is needed to trigger the timer. This is the circuit that I now use, since it has more musical properties. Unlike the first circuit the attack portion of the ADSR goes immediately to decay when the gate goes low. In the first circuit the attack (once triggered) goes until the 10V threshold is reached, regardless of gate going low.
+
+The transistors and diodes are not labeled in the schematic. You can use pretty much any small signal types there. My usual pick is BC547 or BC548 for NPN and 1N4148 for diodes.
+
+Third ADSR Schematic	
+
+Third ADSR Schematic: "The Fastest Envelope in the West"
+
+This schematic shows a variation of the ADSR envelope generator with a 7555 timer IC. That is the circuit that I'd recommend. The key difference is a buffer between the Sustain pot and the Decay Pot. This makes the decay time independant of the setting of the sustain pot, and results in very snappy decays. As with all the circuits presented here, you can modify the time constants by choosing different values for the A, D, and R Pots, and the 2.2uF Cap. Also you can modify the 220 ohms series resistors at the pots to influence the minimum time. Or say if you want to use 1Meg pots, just increase the 2.2u to 4.7u and the 220 to 100 ohms, and you have pretty much the same time constants. Generally the time depends on the product of R and C, so if you increase the pot value or the cap value the maximum time increases. A 1Meg resistor can be added to the circuit to provide for some input hysteresis, this improves triggering on slowly changing waveforms. This is indicated in dotted grey. 

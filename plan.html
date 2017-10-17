@@ -1,0 +1,334 @@
+<style>
+h2{ padding-left: 20px}
+h3{ padding-left: 40px}
+h4{ padding-left: 60px}
+h5{ padding-left: 80px}
+h6{ padding-left: 100px}
+h6{ padding-left: 120px}
+blockquote{
+    display: block;
+    padding: 10px;
+    background-color: #dddddd
+}
+.content{
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    background-color: #eeeeee
+}
+</style>
+<body>
+<div class="content">
+<h1 id="working-modules">Working Modules</h1>
+<ul>
+<li>Attenuator</li>
+<li>CV-Source</li>
+<li>Signal Copier</li>
+<li>Signal Selector</li>
+<li>Buttons</li>
+<li>Arduino stepped oscillator</li>
+<li>Speaker</li>
+<li>Amplifier</li>
+</ul>
+<h1 id="not-working-modules">Not-working modules</h1>
+<ul>
+<li>Sequencer (currently troubleshooting it)</li>
+</ul>
+<h1 id="presumably-working-modules">Presumably Working Modules</h1>
+<ul>
+<li>Auduino 2</li>
+</ul>
+<h1 id="work-in-progress-modules">Work in progress Modules</h1>
+<ul>
+<li>Clock/Frequency Divider</li>
+<li>LFO</li>
+<li>Auduino 1</li>
+<li>Auduino 3</li>
+<li>Atari Punk Console</li>
+</ul>
+<h1 id="modules-ill-make-soon">Modules i'll make soon</h1>
+<ul>
+<li>VCO</li>
+<li>Arduino VCO</li>
+</ul>
+<h1 id="plans-for-a-diy-modular-synth">Plans for a diy modular synth</h1>
+<p>Here is the current version of the plans I've been working with. I wrote em for myself, so they might not be very useful for others.</p>
+<h2 id="system">System</h2>
+<h3 id="dimensions">Dimensions</h3>
+<ul>
+<li>close to 4U: 180 mm</li>
+<li>module width will be x*10mm, so far smallest is 30 mm</li>
+<li>front panels will be 2.7mm high</li>
+<li>standard pot knobs are ....... mm in height</li>
+</ul>
+<h3 id="design">Design</h3>
+<ul>
+<li>CV and audio both on banana jacks</li>
+<li>folding box with piano hinge, collapsible feet and removable back panel?</li>
+<li>serge modules might fit, though i might have to do minor adjustments to my cases</li>
+<li>front panels and pot knobs will be made from 2.7 mm plywood using a lasercutter</li>
+<li>front panel design will incorporate arrows and curves to signify what knob/plug does what</li>
+<li>so far, i've mostly used the &quot;Arial&quot; font on frontpanels</li>
+<li>maybe:
+<ul>
+<li>standardized rectangular wooden format with dovetails and a back?</li>
+<li>make these 200mm * x00mm in outer dimensions, with a standardized inter-connection system?</li>
+<li>same format as modular book cases i plan to make?</li>
+<li>threaded inserts?</li>
+<li>wooden pegs?</li>
+<li>wont use rails, but screw directly into the wood?</li>
+</ul></li>
+</ul>
+<h3 id="voltages-and-power-supply">Voltages and Power Supply</h3>
+<ul>
+<li>use desktop power supply, optionally decased?</li>
+<li>chinese step up/down converter</li>
+<li>diy powersupply</li>
+<li>5</li>
+<li>15</li>
+<li>-15</li>
+<li>maybe:
+<ul>
+<li>9</li>
+<li>12</li>
+</ul></li>
+<li>So far, i've made a power bus out of bare copper wire with 3 connections (intended for gnd, +5 and +15 v), but i can easily add a fourth and fifth power line</li>
+</ul>
+<h2 id="modules">Modules:</h2>
+<h3 id="oscillators">Oscillators</h3>
+<h4 id="vco">VCO:</h4>
+<ul>
+<li>x4046</li>
+<li>555-based</li>
+<li>http://www.electro-music.com/forum/topic-54623.html</li>
+<li>stepped VCO</li>
+<li>sync out</li>
+<li>triple vco with one input and with an attenuator each at the point where exp voltage has been generated: this would be an oscillator with undertones</li>
+</ul>
+<h4 id="lfo">LFO:</h4>
+<ul>
+<li>555-based</li>
+</ul>
+<h4 id="stepped-tone-generator">Stepped Tone Generator</h4>
+<h4 id="atari-punk-console">Atari Punk Console</h4>
+<h3 id="amplification-and-deamplification">Amplification and Deamplification</h3>
+<h4 id="vca">VCA:</h4>
+<ul>
+<li>opamps?</li>
+</ul>
+<h4 id="mixer">Mixer</h4>
+<ul>
+<li>VC?</li>
+</ul>
+<h3 id="sequencer">Sequencer:</h3>
+<ul>
+<li>4017 and opamps
+<ul>
+<li>Dual or triple channel</li>
+<li>Add a lfo for clock, allow one of the channels to be used as an input for the lfo clock allowing for configureable step length</li>
+</ul></li>
+<li>blue pill, step length, direction, ping-pong, multi/single gate, normal length,</li>
+</ul>
+<h3 id="function-generator">Function Generator</h3>
+<h3 id="clock-subdivider">Clock Subdivider:</h3>
+<ul>
+<li>4017</li>
+</ul>
+<h3 id="frequency-subdivider">Frequency Subdivider:</h3>
+<ul>
+<li>4017</li>
+<li>max clock frequency = 2mhz <span class="citation">@5volt</span>, 6mhz <span class="citation">@15volt</span></li>
+</ul>
+<h3 id="clock-multiplier">Clock Multiplier</h3>
+<ul>
+<li>4046</li>
+</ul>
+<blockquote>
+<p>What you need is a Phase Locked Loop. There is a 4046 CMOS IC that implements one, but you also need a digital divider so you could build a phase comparator and use a synthesizer VCO. The principle is to divide the VCO output down by the ratio you want and then compare the phase with your input signal. The phase comparator produces a CV that makes the VCO track the input frequency at a multiple set by the divider. The simplest is an XOR gate followed by an RC filter, but there are better more sophisticated circuits. The 4046 has two alternatives.</p>
+<p>CD4046 application report</p>
+<p>Or just Google &quot;Phase Locked Loop&quot;...</p>
+</blockquote>
+<h3 id="frequency-multiplier">Frequency Multiplier</h3>
+<p>See &quot;Clock Multiplier&quot;, but with a higher frequency</p>
+<h3 id="envelopes">Envelopes:</h3>
+<h4 id="ad">AD</h4>
+<h4 id="ar">AR</h4>
+<h4 id="adsr">ADSR:</h4>
+<ul>
+<li>555-based
+<ul>
+<li>http://schmitzbits.de/adsr.html</li>
+<li>yusynth adsr</li>
+</ul></li>
+</ul>
+<h4 id="envelope-follower">Envelope Follower:</h4>
+<pre><code>a basic ac-dc converter, outputs the dc voltage of the peak (the amplitude) when given an ac waveform</code></pre>
+<h3 id="filters">Filters:</h3>
+<p>cap and inductor</p>
+<h4 id="notch-filter">Notch Filter</h4>
+<h4 id="low-pass-filter">Low-Pass Filter</h4>
+<ul>
+<li>most popular in modular synths</li>
+<li>passes low frequency content</li>
+<li>moog's version: ladder filter</li>
+</ul>
+<h4 id="high-pass-filter">High-Pass Filter</h4>
+<ul>
+<li>passes high frequency content</li>
+</ul>
+<h4 id="band-pass-filter">Band-Pass Filter</h4>
+<h4 id="all-pass-filter">All-Pass Filter</h4>
+<ul>
+<li>can be seen as a phase shifter</li>
+<li>changes phase based on frequency</li>
+<li>popular sound on guitars</li>
+<li>when summed with input signal, the frequency-parts that are 180 degrees changed will negate eachother</li>
+</ul>
+<h4 id="moog-ladder-filter">Moog Ladder Filter</h4>
+<ul>
+<li>http://www.yusynth.net/Modular/EN/MOOGVCF/index.html</li>
+</ul>
+<h3 id="maths">Maths</h3>
+<h4 id="summer">Summer</h4>
+<h4 id="substractor">Substractor</h4>
+<h4 id="multiplicator">Multiplicator</h4>
+<h4 id="integrator">Integrator</h4>
+<h4 id="quantizer">Quantizer</h4>
+<h3 id="equalizer">Equalizer</h3>
+<h3 id="comparator">Comparator</h3>
+<h3 id="noise">Noise</h3>
+<h4 id="pink">Pink</h4>
+<h4 id="white">White</h4>
+<h4 id="blue">Blue</h4>
+<h4 id="redbrown">Red/Brown</h4>
+<h3 id="arduino">Arduino</h3>
+<ul>
+<li>auduino granular synth</li>
+<li>ginko modular grains</li>
+<li>blue pill</li>
+<li>quantizer</li>
+<li>inspired by ardcore</li>
+<li>midi to cv converter</li>
+<li>http://playground.arduino.cc/Main/ArduinoSynth</li>
+</ul>
+<h3 id="chord-maker">Chord Maker:</h3>
+<p>either:</p>
+<ul>
+<li>cv-adder (with maybe an internal VCO)</li>
+<li>or frequency multiplier and divider, optionally combined with external or internal waveform changer</li>
+</ul>
+<p>Could turn into a modulator when CV-ed and supplied with either the output of an LFO (probably quantized)</p>
+<p>or the output of a sequencer (also probably quantized)</p>
+<h3 id="modulator">Modulator</h3>
+<ul>
+<li>Basically a Chord Maker with a changing interval</li>
+<li>Could also have an option to switch different inputs to an output rapidly</li>
+<li>External clock?</li>
+<li>Decade counter?</li>
+<li>either:
+<ul>
+<li>cv-adder (with maybe an internal VCO)</li>
+<li>or frequency multiplier and divider, optionally combined with external or internal waveform changer</li>
+</ul></li>
+</ul>
+<h3 id="arpegiattor">Arpegiattor</h3>
+<h3 id="waveform-changer">Waveform Changer</h3>
+<p>TODO: Look into what changes/shapes waveforms Triangle is useful for frequency multiplication</p>
+<h3 id="slew-effect">Slew Effect</h3>
+<h3 id="trigger-extractor">Trigger Extractor</h3>
+<h3 id="dc-offset-remover">DC-Offset Remover</h3>
+<p>TODO: See whether this is useful, what an implementation would be, whether just a cap in series inbetween the in- and output would suffice so it'd be useful</p>
+<h3 id="portamento-adder">Portamento Adder</h3>
+<h3 id="simple-passives">Simple Passives:</h3>
+<h4 id="attenuator">Attenuator</h4>
+<h4 id="cv-source">CV-Source</h4>
+<h4 id="splitters">Splitters</h4>
+<h4 id="signal-selector">Signal Selector</h4>
+<h4 id="signal-switcher">Signal Switcher</h4>
+<h4 id="signal-copier">Signal Copier</h4>
+<h4 id="suite-of-connections">Suite of Connections</h4>
+<ul>
+<li>has been done before: https://www.muffwiggler.com/forum/viewtopic.php?t=183581</li>
+<li>negation, sum, difference, integration, multiplication, etc</li>
+</ul>
+<h3 id="visualizing-analyzing-gear">Visualizing / Analyzing Gear</h3>
+<h4 id="oscilloscope">Oscilloscope</h4>
+<p>Buy Chinese oscilloscope kit on aliexpress, make new front panel Maybe change firmware? Sell as kit? Could maybe be used as tuner, with changed firmware</p>
+<h4 id="tuner">Tuner</h4>
+<p>arduino?</p>
+<h4 id="level-translators">Level Translators</h4>
+<ul>
+<li>What CV/sound levels will I even use?</li>
+</ul>
+<h3 id="input-controllers">Input Controllers</h3>
+<h4 id="keyboard">Keyboard</h4>
+<ul>
+<li>polyphonic</li>
+<li>speed/force-sensitive</li>
+<li>gate output</li>
+<li>digital scanning</li>
+</ul>
+<h4 id="ribbon-controller">Ribbon Controller</h4>
+<ul>
+<li>pressure-sensitive</li>
+<li>gate output</li>
+<li>polyphonic????</li>
+<li>also known as:
+<ul>
+<li>linear controller</li>
+<li>stringer</li>
+</ul></li>
+</ul>
+<h4 id="theremin">Theremin</h4>
+<ul>
+<li>YEEEESS</li>
+</ul>
+<h4 id="early-experimental-instruments">Early Experimental Instruments</h4>
+<ul>
+<li>trautonium</li>
+<li>hellertion</li>
+<li>crea-tone</li>
+<li>oscillion</li>
+<li>emiriton</li>
+</ul>
+<h4 id="drumset-like-thing">Drumset-like thing</h4>
+<h3 id="midi-cv-converter">MIDI-CV Converter</h3>
+<h3 id="cv-midi-converter">CV-MIDI Converter</h3>
+<h3 id="ring-modulator">Ring Modulator</h3>
+<ul>
+<li>No clue what this is, apparently useful for synthesis</li>
+</ul>
+<h3 id="complete-synth-voices">Complete Synth Voices</h3>
+<h4 id="ym3812-opl2-aka-soundblaster">YM3812 (OPL2 aka &quot;SoundBlaster&quot;)</h4>
+<ul>
+<li>YM2413: same thing, but you can only configure settings for all voices at once</li>
+<li>Use a kit? (20 dollars + shipping costs) #### YM262 (OPL3)</li>
+<li><h3 id="lunetta">Lunetta</h3>
+<h4 id="oscillators-1">Oscillators</h4></li>
+<li>CD40106</li>
+<li>CD4093 #### Counters #### Sequencers</li>
+<li>4017 (baby8)</li>
+<li>dual 4017, with 16 steps</li>
+<li>frequency divider with a mux #### Stepped Envelope Generators</li>
+</ul>
+<h3 id="parts">Parts:</h3>
+<ul>
+<li>sliderpots</li>
+<li>exponential pots</li>
+<li>other jacks</li>
+<li>switched jacks</li>
+<li>rotary switches</li>
+<li>YM3812</li>
+<li>YM2413</li>
+<li>YMF262</li>
+</ul>
+<h2 id="books">Books</h2>
+<ul>
+<li>Electronic Music Circuits, chapter on filters</li>
+<li><p>Analog days, page 149 ext, 132 int</p></li>
+<li>Wireless World, the circuits by Tim Orr</li>
+</ul>
+</div>
+</body>

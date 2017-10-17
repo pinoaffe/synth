@@ -1,0 +1,164 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L POT RV1
+U 1 1 595774D3
+P 4350 1900
+F 0 "RV1" H 4350 1820 50  0000 C CNN
+F 1 "POT" H 4350 1900 50  0000 C CNN
+F 2 "" H 4350 1900 50  0000 C CNN
+F 3 "" H 4350 1900 50  0000 C CNN
+	1    4350 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR1
+U 1 1 595775B7
+P 5800 2050
+F 0 "#PWR1" H 5800 1800 50  0001 C CNN
+F 1 "GND" H 5800 1900 50  0000 C CNN
+F 2 "" H 5800 2050 50  0000 C CNN
+F 3 "" H 5800 2050 50  0000 C CNN
+	1    5800 2050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_01X01 P2
+U 1 1 59577DED
+P 4350 1550
+F 0 "P2" H 4350 1650 50  0000 C CNN
+F 1 "out" V 4450 1550 50  0000 C CNN
+F 2 "" H 4350 1550 50  0000 C CNN
+F 3 "" H 4350 1550 50  0000 C CNN
+	1    4350 1550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_01X01 P1
+U 1 1 59577FF7
+P 4200 1700
+F 0 "P1" H 4200 1800 50  0000 C CNN
+F 1 "in" V 4300 1700 50  0000 C CNN
+F 2 "" H 4200 1700 50  0000 C CNN
+F 3 "" H 4200 1700 50  0000 C CNN
+	1    4200 1700
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4500 1900 4500 2050
+Wire Wire Line
+	4500 2050 5800 2050
+Wire Wire Line
+	5150 2050 5150 1900
+$Comp
+L CONN_01X01 P3
+U 1 1 595780B0
+P 4850 1700
+F 0 "P3" H 4850 1800 50  0000 C CNN
+F 1 "in" V 4950 1700 50  0000 C CNN
+F 2 "" H 4850 1700 50  0000 C CNN
+F 3 "" H 4850 1700 50  0000 C CNN
+	1    4850 1700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_01X01 P4
+U 1 1 595780AA
+P 5000 1550
+F 0 "P4" H 5000 1650 50  0000 C CNN
+F 1 "out" V 5100 1550 50  0000 C CNN
+F 2 "" H 5000 1550 50  0000 C CNN
+F 3 "" H 5000 1550 50  0000 C CNN
+	1    5000 1550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L POT RV2
+U 1 1 595780A4
+P 5000 1900
+F 0 "RV2" H 5000 1820 50  0000 C CNN
+F 1 "POT" H 5000 1900 50  0000 C CNN
+F 2 "" H 5000 1900 50  0000 C CNN
+F 3 "" H 5000 1900 50  0000 C CNN
+	1    5000 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X01 P5
+U 1 1 595782B9
+P 5500 1700
+F 0 "P5" H 5500 1800 50  0000 C CNN
+F 1 "in" V 5600 1700 50  0000 C CNN
+F 2 "" H 5500 1700 50  0000 C CNN
+F 3 "" H 5500 1700 50  0000 C CNN
+	1    5500 1700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_01X01 P6
+U 1 1 595782BF
+P 5650 1550
+F 0 "P6" H 5650 1650 50  0000 C CNN
+F 1 "out" V 5750 1550 50  0000 C CNN
+F 2 "" H 5650 1550 50  0000 C CNN
+F 3 "" H 5650 1550 50  0000 C CNN
+	1    5650 1550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L POT RV3
+U 1 1 595782C5
+P 5650 1900
+F 0 "RV3" H 5650 1820 50  0000 C CNN
+F 1 "POT" H 5650 1900 50  0000 C CNN
+F 2 "" H 5650 1900 50  0000 C CNN
+F 3 "" H 5650 1900 50  0000 C CNN
+	1    5650 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 2050 5800 1900
+Connection ~ 5150 2050
+$EndSCHEMATC
